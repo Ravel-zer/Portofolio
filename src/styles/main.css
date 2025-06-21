@@ -51,6 +51,7 @@ html {
 }
 
 /* HAMBURGER MENU */
+/* NAVBAR RESPONSIVE */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -58,7 +59,6 @@ html {
   width: 25px;
   height: 18px;
   cursor: pointer;
-  z-index: 101;
 }
 
 .hamburger .bar {
@@ -69,18 +69,16 @@ html {
   transition: all 0.3s ease;
 }
 
-/* Animasi saat aktif (jadi "X") */
 .hamburger.active .bar:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
+  transform: rotate(45deg) translateY(7px);
 }
 .hamburger.active .bar:nth-child(2) {
   opacity: 0;
 }
 .hamburger.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
+  transform: rotate(-45deg) translateY(-7px);
 }
 
-/* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -92,20 +90,15 @@ html {
     left: 0;
     right: 0;
     flex-direction: column;
-    align-items: center;
     background-color: rgba(255, 255, 255, 0.95);
     padding: 1.5rem 0;
-    display: none;
     gap: 1.2rem;
+    align-items: center;
+    display: none;
   }
 
   .nav-links.open {
     display: flex;
-  }
-
-  .nav-links li a {
-    font-size: 1.05rem;
-    color: #1f1f1f;
   }
 }
 

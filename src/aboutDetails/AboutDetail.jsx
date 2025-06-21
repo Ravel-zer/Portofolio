@@ -69,6 +69,10 @@ const AboutDetail = () => {
   const [animateQuote, setAnimateQuote] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (isInView) {
       setAnimateQuote(true);
     } else {

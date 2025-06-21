@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./../styles/main.css";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isAboutDetail = location.pathname === "/about-details";
 
   const toggleNavbar = () => setIsOpen(!isOpen);
-
   const closeMenu = () => setIsOpen(false);
+
+  const getHref = (hash) => (isAboutDetail ? `/${hash}` : hash);
 
   return (
     <nav className="navbar">
@@ -15,30 +19,32 @@ export default function Navbar() {
           Reza Alfaridzi
         </a>
 
+        {/* Hamburger Menu */}
         <div className={`hamburger ${isOpen ? "active" : ""}`} onClick={toggleNavbar}>
           <span className="bar" />
           <span className="bar" />
           <span className="bar" />
         </div>
 
+        {/* Navigation Links */}
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
           <li>
-            <a href="#home" onClick={closeMenu}>
+            <a href={getHref("#home")} onClick={closeMenu}>
               Home
             </a>
           </li>
           <li>
-            <a href="#about" onClick={closeMenu}>
+            <a href={getHref("#about")} onClick={closeMenu}>
               About
             </a>
           </li>
           <li>
-            <a href="#projects" onClick={closeMenu}>
+            <a href={getHref("#projects")} onClick={closeMenu}>
               Projects
             </a>
           </li>
           <li>
-            <a href="#contact" onClick={closeMenu}>
+            <a href={getHref("#contact")} onClick={closeMenu}>
               Contact
             </a>
           </li>
