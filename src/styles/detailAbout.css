@@ -1,0 +1,441 @@
+/* src/components/styles/detailAbout.css */
+
+/* --- Global Styles & Variables --- */
+:root {
+  --bg-color: #f4f4f5; /* Warna latar sedikit lebih hangat */
+  --card-bg-color: #ffffff;
+  --text-color: #1a202c;
+  --subtle-text-color: #4a5568;
+  --accent-color: #2d3748;
+  --border-color: #e2e8f0;
+  --primary-font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* --- Base & Typography --- */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--primary-font);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 24px;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+p {
+  color: var(--subtle-text-color);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* --- 1. AboutDetail Section (Hero) --- */
+.about-detail-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+  min-height: 90vh;
+}
+
+.about-detail-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
+  margin-bottom: 16px;
+}
+
+.about-detail-content .intro-text {
+  font-size: 1.125rem;
+  margin-bottom: 32px;
+}
+
+.scroll-down-btn {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-down-btn:hover {
+  background-color: #4a5568;
+  transform: translateY(-2px);
+}
+
+.about-detail-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+/* --- 2. WhoAmI Section --- */
+.whoami-section {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 64px;
+}
+
+.whoami-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.whoami-images img {
+  width: 100%;
+  border-radius: 12px;
+  filter: grayscale(100%);
+}
+
+.whoami-images .img-1 {
+  grid-column: 1 / 3;
+}
+.whoami-images .img-2 {
+  grid-column: 1 / 2;
+}
+.whoami-images .img-3 {
+  grid-column: 2 / 3;
+  align-self: start;
+}
+
+.whoami-text h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 24px;
+}
+.whoami-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+/* --- 3. Skills & Expertise Section --- */
+.skills-section {
+  text-align: center;
+}
+.skills-section > h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 12px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background-color: var(--card-bg-color);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+.skill-card h4 {
+  margin-top: 16px;
+  font-size: 1.25rem;
+}
+
+.skills-tags-container {
+  margin-top: 48px;
+}
+.skills-tags-container h3 {
+  font-size: 1.75rem;
+  margin-bottom: 32px;
+}
+
+.tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: var(--card-bg-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+.tag:hover {
+  transform: translateY(-2px);
+}
+
+/* --- 4. Experience Section (Timeline) --- */
+.experience-section .timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.experience-section .timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: var(--border-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* --- Item Timeline --- */
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  /* [PERBAIKAN] Menambahkan box-sizing */
+  box-sizing: border-box;
+}
+
+/* --- Dot di Garis Tengah (Tidak ada perubahan) --- */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border: 3px solid var(--accent-color);
+  top: 45px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* --- Posisi Item Kiri & Kanan (Tidak ada perubahan) --- */
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+.timeline-item:nth-child(odd)::after {
+  right: -8px;
+}
+.timeline-item:nth-child(even)::after {
+  left: -8px;
+}
+
+/* --- Bubble Tanggal --- */
+.timeline-date {
+  position: absolute;
+  top: 32px;
+  width: 240px; /* Diubah dari max-width agar lebih konsisten */
+  background-color: var(--accent-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 2; /* Diubah ke z-index 2 agar di atas dot */
+  word-wrap: break-word;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* [PERBAIKAN UTAMA] Mengubah posisi bubble tanggal agar di dalam item */
+.timeline-item:nth-child(odd) .timeline-date {
+  right: 60px; /* <-- Diubah dari calc(100% + 20px) */
+}
+.timeline-item:nth-child(even) .timeline-date {
+  left: 60px; /* <-- Diubah dari calc(100% + 20px) */
+}
+
+/* --- Kartu Konten --- */
+.timeline-content {
+  padding: 24px 32px;
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  position: relative;
+  /* [PERBAIKAN] Memberi ruang untuk bubble tanggal di atas */
+  margin-top: 80px;
+}
+
+/* --- Gaya Teks di Konten (Tidak ada perubahan signifikan) --- */
+.timeline-content h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+.timeline-content .job-type {
+  font-size: 0.9rem;
+  color: var(--subtle-text-color);
+  font-style: italic;
+  display: block;
+  margin-bottom: 12px;
+}
+.timeline-content .tags-wrapper {
+  /* Menambahkan display flex untuk memastikan gap berfungsi */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 16px;
+  gap: 8px;
+}
+.timeline-content .tag {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  /* Menambahkan style agar sesuai gambar */
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+}
+/* --- 5. Education Section --- */
+.education-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  text-align: center;
+}
+
+.education-section h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 24px;
+}
+
+.education-details {
+  max-width: 800px;
+}
+
+.education-details h3 {
+  font-size: 1.5rem;
+}
+
+.education-details .date {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.education-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.education-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.education-gallery img:hover {
+  filter: grayscale(0%); /* hanya gambar yang di-hover jadi berwarna */
+  transform: scale(1.05);
+}
+
+/* --- Quote Section --- */
+.quote-section {
+  margin-top: 80px;
+  padding: 40px 20px;
+  text-align: center;
+}
+.quote-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.quote-heading span {
+  display: inline-block;
+  white-space: pre; /* untuk spasi */
+}
+.quote-author {
+  font-style: italic;
+  color: var(--subtle-text-color);
+  font-size: 1rem;
+}
+
+/* --- Responsive Design --- */
+@media screen and (max-width: 1024px) {
+  .timeline-date {
+    position: static;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-container {
+    padding: 80px 16px;
+  }
+
+  .about-detail-section,
+  .whoami-section,
+  .education-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  .about-detail-image {
+    order: -1;
+  } /* Image on top on mobile */
+  .whoami-images {
+    order: 2;
+  }
+  .whoami-text {
+    order: 1;
+    text-align: left;
+  }
+
+  .timeline::after {
+    left: 20px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 10px;
+    left: 0 !important;
+  }
+  .timeline-item::after {
+    left: 12px;
+  }
+  .timeline-date {
+    position: static;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+  }
+  .timeline-content {
+    text-align: left;
+  }
+
+  .education-section {
+    text-align: left;
+  }
+  .education-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .education-gallery img:last-child {
+    grid-column: 1 / 3;
+  }
+}

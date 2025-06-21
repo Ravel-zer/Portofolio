@@ -1,0 +1,110 @@
+.projects-section {
+  background-color: #f1f2f4;
+  padding: 80px 0;
+  color: #ffffff; /* semua teks di dalam section default putih */
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #5a5a5a; /* judul sesuai permintaan */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background-color: #5a5a5a; /* warna card sesuai permintaan */
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #374151;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #ffffff; /* teks dalam card putih */
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-link-wrapper {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-image-container {
+  position: relative;
+  height: 200px;
+  background-color: #374151;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 24, 39, 0.7);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-hover-overlay {
+  opacity: 1;
+}
+
+.project-icon {
+  font-size: 2.5rem;
+  color: #ffffff;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
+}
+
+.project-card:hover .project-icon {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.project-info {
+  padding: 24px;
+}
+
+.project-info h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #ffffff; /* judul dalam card tetap putih */
+}
+
+.project-info p {
+  font-size: 0.9rem;
+  color: #ffffff; /* deskripsi juga putih */
+  line-height: 1.6;
+  margin: 0;
+}
